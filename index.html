@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Be My Valentine 💘</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #ff758c, #ff7eb3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      color: #fff;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(10px);
+      padding: 40px;
+      border-radius: 25px;
+      text-align: center;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+      animation: fadeIn 1.5s ease;
+      max-width: 400px;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 1.1em;
+      line-height: 1.6;
+      margin-bottom: 30px;
+    }
+
+    .heart {
+      font-size: 60px;
+      animation: pulse 1.5s infinite;
+      margin-bottom: 20px;
+    }
+
+    button {
+      padding: 15px 30px;
+      border-radius: 30px;
+      border: none;
+      font-size: 1em;
+      cursor: pointer;
+      margin: 10px;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .yes {
+      background: #ff4d6d;
+      color: white;
+    }
+
+    .yes:hover {
+      transform: scale(1.1);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    }
+
+    .no {
+      background: #fff;
+      color: #ff4d6d;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+      100% { transform: scale(1); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <div class="heart">❤️</div>
+    <h1>Hey My Love</h1>
+    <p>
+      Every moment with you feels magical ✨<br>
+      You make my world brighter, my days happier,  
+      and my heart fuller 💕
+    </p>
+    <h2>Will you be my Valentine?</h2>
+
+    <button class="yes" onclick="sayYes()">Yes, always 💖</button>
+    <button class="no" onclick="sayNo()">No 😔</button>
+  </div>
+
+  <script>
+    function sayYes() {
+      document.body.innerHTML = `
+        <div style="
+          display:flex;
+          align-items:center;
+          justify-content:center;
+          height:100vh;
+          text-align:center;
+          color:white;
+          font-family:'Segoe UI', sans-serif;
+        ">
+          <div>
+            <h1 style="font-size:3em;">YAY!!! 💘🥰</h1>
+            <p style="font-size:1.3em;">
+              You just made me the happiest person ever 💕<br>
+              Happy Valentine’s Day, my love 🌹
+            </p>
+          </div>
+        </div>
+      `;
+    }
+
+    function sayNo() {
+      document.body.innerHTML = `
+        <div style="
+          display:flex;
+          align-items:center;
+          justify-content:center;
+          height:100vh;
+          text-align:center;
+          color:white;
+          font-family:'Segoe UI', sans-serif;
+          padding: 20px;
+        ">
+          <div>
+            <h1 style="font-size:3em;">Oh no... 😔</h1>
+            <p style="font-size:1.2em; line-height:1.6;">
+              My heart just sank a little…<br>
+              Are you sure?  
+              Maybe you want to think again? 💕
+            </p>
+            <button onclick="reloadPage()" style="
+              margin-top: 20px;
+              padding: 15px 30px;
+              border-radius: 30px;
+              border: none;
+              font-size: 1em;
+              cursor: pointer;
+              background: #fff;
+              color: #ff4d6d;
+            ">
+              Let me try again 💌
+            </button>
+          </div>
+        </div>
+      `;
+    }
+
+    function reloadPage() {
+      location.reload();
+    }
+  </script>
+
+</body>
+</html>
